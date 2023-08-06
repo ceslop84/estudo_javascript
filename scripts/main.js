@@ -34,6 +34,9 @@ btnDate.onclick = function(){
   const obj = /e/.exec("The best things in life are free!");
   console.log("Found " + obj[0] + " in position " + obj.index + " in the text: " + obj.input);
 
+  p = document.getElementById("ahh");
+  p.remove()
+
 }
 
 const myImage = document.getElementById("imgTest");
@@ -54,6 +57,14 @@ const myButton = document.getElementById("btnTest");
 myButton.onclick = function(){
   const text = myButton.innerHTML;
   myButton.innerHTML = "Mudei de texto!";
+
+  let slideClass = document.querySelector('.slide');
+
+  let p = document.createElement("p");
+  p.innerHTML = "CRIADO DINAMICAMENTE";
+  p.id = "ahh"
+  p.style.color = 'red';
+  slideClass.appendChild(p);
 };
 
 
@@ -93,3 +104,35 @@ class Rectangle {
 const square = new Rectangle(10, 10);
 console.log(square.area); // 100
 console.log(square.getSides()); // [10, 10, 10, 10]
+
+const imagens = ["porshe.jpg", "bugatti.jpg", "ferrari.jpg"];
+let i = 0;
+const btnAvancar = document.getElementById("btnAvancar");
+const btnVoltar = document.getElementById("btnVoltar");
+const slide = document.getElementById("slide");
+btnAvancar.onclick = avancarSlide
+function avancarSlide(){
+  i<imagens.length-1 ? i++ : i=0;
+  slide.src = "images/" + imagens[i];
+}
+btnVoltar.onclick = voltarSlide
+function voltarSlide(){
+  i==0 ? i=imagens.length-1 : i--;
+  slide.src = "images/" + imagens[i];
+}
+slide.onmouseover = function(){
+  slide.style.border = '3px solid green';
+}
+slide.onmouseout = function(){
+  slide.style.border = '0px solid white';
+}
+inText = document.getElementById("inText");
+text = document.getElementById("txt");
+inText.onchange = function(){
+  text.innerHTML = inText.value;
+}
+//slide.addEventListener('click', function(obj){console.log(obj)});
+slide.onclick = function(obj){
+  console.log(obj);
+}
+
