@@ -24,7 +24,26 @@
         <button id="btnDate">Que horas são?</button>
         <p> Exercício de evento.</p>
 
+        <main>
+            <h1> CAlcular autonomia</h1>
 
+            <form onsubmit="return false">
+                <label for="consumo">Consumo (km/l)</label>
+                <input id="consumo" type="number">
+
+                <label for="valorLitro">Valor litro combustível (R$)</label>
+                <input id="valorLitro" type="number">
+
+                <label for="abastecimento">Abastecimento (l)</label>
+                <input id="abastecimento" type="number">
+
+                <input type="submit" value="Calcular" id="btnAuton" onclick = "calculaAutonomia()">
+            </form>
+
+        </main>
+
+        <p></p>
+        <p></p>
         <input type="text" id="inText"><p id="txt">Preencha aqui...</p></input>
         <section class = "slide">
             <button id="btnVoltar">&lt;</button>
@@ -33,5 +52,5 @@
         </section>
 
     </body>
-    <script src="/scripts/main.js"></script>
+    <script src="/scripts/train.js"></script>
 </html>

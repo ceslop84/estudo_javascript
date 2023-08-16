@@ -136,3 +136,12 @@ slide.onclick = function(obj){
   console.log(obj);
 }
 
+function calculaAutonomia(){
+  
+  let consumo = document.getElementById('consumo').value
+  let valorLitro = document.getElementById('valorLitro').value
+  let abastecimento = document.getElementById('abastecimento').value
+  let autonomia = (abastecimento/valorLitro)*consumo;
+  alert("A autonomia é de " + autonomia + "!");
+}
+
